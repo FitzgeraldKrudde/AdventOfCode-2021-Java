@@ -9,19 +9,11 @@ public class Day02 extends Day {
         // get our class
         final Class<?> clazz = new Object() {}.getClass().getEnclosingClass();
 
-        // get our full classname
-        final String fullClassName = clazz.getCanonicalName();
-
         // construct filename with input
-        final String filename = clazz.getSimpleName().toLowerCase().replace("_0", "_") + ".txt";
+        final String filename = clazz.getSimpleName().toLowerCase().replace("day0","day") + ".txt";
 
-        // create instance
-        Object day = Class.forName(fullClassName).getDeclaredConstructor().newInstance();
-        // find run method
-        Method runMethod = day.getClass().getMethod("main", String.class);
-        // invoke run method for our instance
-        runMethod.invoke(day, filename);
-
+        // invoke "main" from the base nl.krudde.aoc2021.Day class
+        new Day02().main(filename);
         // @formatter:on
     }
 

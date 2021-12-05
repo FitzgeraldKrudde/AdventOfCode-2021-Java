@@ -14,7 +14,7 @@ public class Day03 extends Day {
         final Class<?> clazz = new Object() {}.getClass().getEnclosingClass();
 
         // construct filename with input
-        final String filename = clazz.getSimpleName().toLowerCase().replace("_0", "_") + ".txt";
+        final String filename = clazz.getSimpleName().toLowerCase().replace("day0","day") + ".txt";
 
         // invoke "main" from the base nl.krudde.aoc2021.Day class
         new Day03().main(filename);
