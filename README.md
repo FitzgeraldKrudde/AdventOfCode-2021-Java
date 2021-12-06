@@ -3,7 +3,7 @@ My plain Java solutions for the Advent Of Code 2021. Probably only cherry-pickin
 
 My goals:
 
-* use new JDK stuff (14/15/16)
+* use new JDK stuff (15/16/17)
 * use streams/lambda
 * write readable/maintaineable code
 * get better/faster with IntelliJ
