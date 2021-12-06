@@ -11,20 +11,6 @@ import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 
 public class Day05 extends Day {
-
-    // @formatter:off
-    static public void main(String[] args) throws Exception {
-        // get our class
-        final Class<?> clazz = new Object() {}.getClass().getEnclosingClass();
-
-        // construct filename with input
-        final String filename = clazz.getSimpleName().toLowerCase().replace("day0","day") + ".txt";
-
-        // invoke "main" from the base nl.krudde.aoc2021.Day class
-        new Day05().main(filename);
-        // @formatter:on
-    }
-
     @Override
     public String doPart1(List<String> inputRaw) {
         List<Point> points = inputRaw.stream()
@@ -91,4 +77,23 @@ public class Day05 extends Day {
 
     record Point(int x, int y) {
     }
+
+    // @formatter:off
+    static public void main(String[] args) throws Exception {
+        // get our class
+        final Class<?> clazz = new Object() {}.getClass().getEnclosingClass();
+
+        // construct filename with input
+        final String filename = clazz.getSimpleName().toLowerCase().replace("day0","day") + ".txt";
+
+        // get the classname
+        final String fullClassName = clazz.getCanonicalName();
+
+        // create instance
+        Day day=(Day) Class.forName(fullClassName).getDeclaredConstructor().newInstance();
+
+        // invoke "main" from the base nl.krudde.aoc2021.Day class
+        day.main(filename);
+    }
+    // @formatter:on
 }

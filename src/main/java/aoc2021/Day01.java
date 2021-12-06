@@ -54,7 +54,14 @@ public class Day01 extends Day {
         // construct filename with input
         final String filename = clazz.getSimpleName().toLowerCase().replace("day0","day") + ".txt";
 
+        // get the classname
+        final String fullClassName = clazz.getCanonicalName();
+
+        // create instance
+        Day day=(Day) Class.forName(fullClassName).getDeclaredConstructor().newInstance();
+
         // invoke "main" from the base nl.krudde.aoc2021.Day class
-        new Day01().main(filename);
+        day.main(filename);
     }
+    // @formatter:on
 }

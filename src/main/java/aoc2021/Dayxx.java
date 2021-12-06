@@ -5,20 +5,6 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 
 public class Dayxx extends Day {
-
-    // @formatter:off
-    static public void main(String[] args) throws Exception {
-        // get our class
-        final Class<?> clazz = new Object() {}.getClass().getEnclosingClass();
-
-        // construct filename with input
-        final String filename = clazz.getSimpleName().toLowerCase().replace("day0","day") + ".txt";
-
-        // invoke "main" from the base nl.krudde.aoc2021.Day class
-        new Dayxx().main(filename);
-        // @formatter:on
-    }
-
     @Override
     public String doPart1(List<String> inputRaw) {
         List<Long> input = parseInput(inputRaw);
@@ -44,4 +30,23 @@ public class Dayxx extends Day {
                 .map(Long::valueOf)
                 .collect(toList());
     }
+
+    // @formatter:off
+    static public void main(String[] args) throws Exception {
+        // get our class
+        final Class<?> clazz = new Object() {}.getClass().getEnclosingClass();
+
+        // construct filename with input
+        final String filename = clazz.getSimpleName().toLowerCase().replace("day0","day") + ".txt";
+
+        // get the classname
+        final String fullClassName = clazz.getCanonicalName();
+
+        // create instance
+        Day day=(Day) Class.forName(fullClassName).getDeclaredConstructor().newInstance();
+
+        // invoke "main" from the base nl.krudde.aoc2021.Day class
+        day.main(filename);
+    }
+    // @formatter:on
 }

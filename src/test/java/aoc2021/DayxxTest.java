@@ -26,7 +26,7 @@ class DayxxTest {
         final Class<?> clazz = new Object() {}.getClass().getEnclosingClass();
 
         // construct filename with input
-        return clazz.getSimpleName().toLowerCase().replace("test","").replace("_0", "_") + ".txt";
+        return clazz.getSimpleName().toLowerCase().replace("test","").replace("day0", "day") + ".txt";
         // @formatter:on
     }
 }
