@@ -67,7 +67,7 @@ public class Day02 extends Day {
         // create instance
         Day day=(Day) Class.forName(fullClassName).getDeclaredConstructor().newInstance();
 
-        // invoke "main" from the base nl.krudde.aoc2021.Day class
+        // invoke "main" from the base Day class
         day.main(filename);
     }
     // @formatter:on
