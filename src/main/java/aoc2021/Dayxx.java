@@ -7,7 +7,7 @@ import static java.util.stream.Collectors.toList;
 public class Dayxx extends Day {
     @Override
     public String doPart1(List<String> inputRaw) {
-        List<Long> input = parseInput(inputRaw);
+//        List<Long> input = parseInput(inputRaw);
 
 
         long result = 0;
@@ -17,7 +17,7 @@ public class Dayxx extends Day {
 
     @Override
     public String doPart2(List<String> inputRaw) {
-        List<Long> input = parseInput(inputRaw);
+//        List<Long> input = parseInput(inputRaw);
 
 
         long result = 0;
