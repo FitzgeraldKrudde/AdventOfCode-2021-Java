@@ -39,34 +39,24 @@ public class Day25 extends Day {
             // east
             for (int x = 0; x < map.length; x++) {
                 for (int y = 0; y < map[0].length; y++) {
-                    switch (map[x][y]) {
-                        case FREE:
-                        case SOUTH:
-                            break;
-                        case EAST:
-                            if (map[x][(y + 1) % map[0].length] == FREE) {
-                                newMap[x][(y + 1) % map[0].length] = EAST;
-                            } else {
-                                newMap[x][y] = EAST;
-                            }
-                            break;
+                    if (map[x][y] == EAST) {
+                        if (map[x][(y + 1) % map[0].length] == FREE) {
+                            newMap[x][(y + 1) % map[0].length] = EAST;
+                        } else {
+                            newMap[x][y] = EAST;
+                        }
                     }
                 }
             }
             // south
             for (int x = 0; x < map.length; x++) {
                 for (int y = 0; y < map[0].length; y++) {
-                    switch (map[x][y]) {
-                        case FREE:
-                        case EAST:
-                            break;
-                        case SOUTH:
-                            if (newMap[(x + 1) % map.length][y] == FREE && map[(x + 1) % map.length][y] != SOUTH) {
-                                newMap[(x + 1) % map.length][y] = SOUTH;
-                            } else {
-                                newMap[x][y] = SOUTH;
-                            }
-                            break;
+                    if (map[x][y] == SOUTH) {
+                        if (newMap[(x + 1) % map.length][y] == FREE && map[(x + 1) % map.length][y] != SOUTH) {
+                            newMap[(x + 1) % map.length][y] = SOUTH;
+                        } else {
+                            newMap[x][y] = SOUTH;
+                        }
                     }
                 }
             }
